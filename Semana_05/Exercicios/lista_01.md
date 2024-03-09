@@ -170,6 +170,37 @@ Chamando os Métodos:
 
 Dica: Utilize console.log() para exibir as informações!
 
+```javascript
+class Animal{ //criação de uma classe 
+    constructor(nome, idade){ //criação dos atributos da classe
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    descrever(){ //criação do método descrever
+        console.log(nome,idade);
+    }
+}
+
+class Gato extends Animal{ // criaçao da classe Gato com herança da classe Animal
+    constructor(nome, idade, cor){//criação dos atributos
+        super(nome, idade);//chamar o constructor da classe Animal     
+           this.cor = cor;
+    
+    }
+
+    miar(){ // criação do método miar
+        console.log("miaow");
+    }
+}
+
+const cachorro = new Animal("Bianca",14); // adição do objeto cachorro com nome e idade
+const gato = new Animal("Catarina", 11, "preto" ); //adição do objeto gato com nome, idade e cor
+
+cachorro.descrever(); // puxando o método descrever para o objeto cachorro
+gato.miar();// puxando o método miar para o gato
+```
+
 
 ______
 
@@ -192,6 +223,30 @@ Chamando o Método para Ver o Total:
 
 Dica: Utilize console.log() para exibir as informações!
 
+```javascript
+class SomadorDeNotas{ //criando uma classe
+    constructor(){//adicionando o atributo de somar notas
+        this.total = 0;
+    }
+
+    adicionarNota(nota){//adicioando o método de somar notas
+        this.total += nota;
+
+    }
+
+    verTotal(){//adicionando método de ver o total
+        console.log(total);
+    }
+}
+
+const somador = new SomadorDeNotas(); //criando um objeto para somar as notas
+
+somador.adicionarNota(8);//atribuindo uma nota
+somador.adicionarNota(2);//atribuindo outra nota
+
+somador.verTotal();// chamando o método para ver o total
+```
+
 
 ______
 
@@ -213,3 +268,40 @@ Agora, sua tarefa é escrever um código em JavaScript que crie as classes Funci
 - Para cada objeto, chame o método calcularSalario() e mostre o salário calculado no console.
 
 Certifique-se de explicar cada parte do código utilizando comentários, explicando para que serve cada atributo e método, bem como a lógica por trás do cálculo de salário para o tipo de funcionário Professor.
+
+```javascript
+class Funcionario{
+    constructor(nome, idade, salarioBase){
+        this.nome = nome;
+        this.idade = idade;
+        this.salarioBase = salarioBase;
+    }
+
+    calcularSalario(){
+
+        console.log(this.salarioBase + "[valor adicional genérico]");
+    }
+}
+
+class Professor extends Funcionario{
+    constructor(nome, idade, salarioBase, diciplina, horasSemanais, valorHora){
+        super(nome,idade,salarioBase);
+        this.diciplina = diciplina
+        this.horasSemanais = horasSemanais;
+        this.valorHora = valorHora;
+    }
+
+    calcularSalario(){
+
+        const salarioProfessor = this.horasSemanais * this.valorHora;
+        console.log (salarioProfessor);
+    }
+
+
+}
+    const professor1 = new Professor("Mario", 37, 2500, "matemática", 40);
+    const professor2 = new Professor("Brenão", 42, 2500, "história", 40);
+
+    professor1.calcularSalario();
+    professor2.calcularSalario();
+```

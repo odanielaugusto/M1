@@ -10,6 +10,8 @@ let a = "olá"
 let b = 10
 print(a)
 ```
+
+
 - Resolva as questões com uso do Visual Studio Code ou ambiente similar.
 - Teste seus códigos antes de trazer a resposta para cá.
 - Cuidado com ChatGPT e afins: entregar algo só para ganhar nota não faz você aprender e ficar mais inteligente. Não seja dependente da máquina!
@@ -23,7 +25,7 @@ print(a)
 
 Escolha a opção que responde corretamente:
 
-a) Imprime os números pares de 1 a 10.
+***a) Imprime os números pares de 1 a 10.** 
 
 b) Imprime os números ímpares de 1 a 10.
 
@@ -39,7 +41,7 @@ ______
 
 No lugar onde está escrito “// linha” qual das opções abaixo deve estar para funcionar corretamente o código?
 
-A) let carro = new Carro("Toyota");
+***A) let carro = new Carro("Toyota");**
 
 B) let ligar = new ligar("Toyota");
 
@@ -55,7 +57,7 @@ ______
 
 Escolha a opção que responde corretamente:
 
-A) 18
+***A) 18**
 
 B) 16
 
@@ -67,7 +69,7 @@ ______
 
 **4)** Como você criaria um método `acelerar()` em uma classe `Carro`, que recebe um parâmetro `velocidade` e o adiciona a um atributo `velocidadeAtual`?
 
-A) ![Uma imagem](assets/ex04_1.PNG)
+***A) ![Uma imagem](assets/ex04_1.PNG)**
 
 B) ![Uma imagem](assets/ex04_2.PNG)
 
@@ -79,7 +81,7 @@ ______
 
 **5)** Qual a forma correta de definir uma classe Carro em JavaScript, com um método ligar() e um atributo marca?
 
-A) ![Uma imagem](assets/ex05_1.PNG)
+***A) ![Uma imagem](assets/ex05_1.PNG)**
 
 B) ![Uma imagem](assets/ex05_2.PNG)
 
@@ -101,7 +103,7 @@ B) "Olá, meu nome é ."
 
 C) "João Maria"
 
-D) "undefined undefined"
+***D) "undefined undefined"**
 
 ______
 
@@ -119,6 +121,12 @@ Criando e manipulando Animais:
 - Para cada animal, chame o método descrever() para ver a descrição no console.
 
 Dica: Utilize `console.log()` para exibir as informações!
+
+```javascript
+//esta aqui com ```
+var d = 'wow'
+console.log("achei legal");
+```
 
 ______
 

@@ -5,7 +5,7 @@ class Animal{ //definição da classe Animal
     }
     descrever(){//método descrever sendo adicionado
     
-        console.log(nome, idade); // exibição do nome e da idade no console
+        console.log(this.nome, this.idade); // exibição do nome e da idade no console
 
     }
 

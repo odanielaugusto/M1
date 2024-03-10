@@ -3,13 +3,13 @@ class SomadorDeNotas{ //criando uma classe
         this.total = 0;
     }
 
-    adicionarNota(nota){//adicioando o método de somar notas
+    adicionarNota(nota){//adicionando o método de somar notas ao total
         this.total += nota;
 
     }
 
     verTotal(){//adicionando método de ver o total
-        console.log(total);
+        console.log(this.total);
     }
 }
 

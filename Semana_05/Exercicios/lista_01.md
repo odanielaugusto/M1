@@ -25,7 +25,7 @@ print(a)
 
 Escolha a opção que responde corretamente:
 
-***a) Imprime os números pares de 1 a 10.** 
+***a) Imprime os números pares de 1 a 10.**
 
 b) Imprime os números ímpares de 1 a 10.
 
@@ -97,13 +97,13 @@ ______
 
 Qual será a saída do código acima?
 
-A) "Olá, meu nome é João. Olá, meu nome é Maria."
+***A) "Olá, meu nome é João. Olá, meu nome é Maria."**
 
 B) "Olá, meu nome é ."
 
 C) "João Maria"
 
-***D) "undefined undefined"**
+D) "undefined undefined"
 
 ______
 
@@ -131,7 +131,7 @@ class Animal{ //definição da classe Animal
     }
     descrever(){//método descrever sendo adicionado
     
-        console.log(nome, idade); // exibição do nome e da idade no console
+        console.log(this.nome, this.idade); // exibição do nome e da idade no console
 
     }
 
@@ -143,6 +143,7 @@ class Animal{ //definição da classe Animal
     //chamado dos métodos para os objetos criados
     cachorro.descrever(); // chamada do método descrever para o objeto cachorro
     gato.descrever(); // chamada do método descrever para o objeto chaamado gato
+
 ```
 
 ______
@@ -178,7 +179,7 @@ class Animal{ //criação de uma classe
     }
 
     descrever(){ //criação do método descrever
-        console.log(nome,idade);
+        console.log(this.nome,this.idade);
     }
 }
 
@@ -189,15 +190,19 @@ class Gato extends Animal{ // criaçao da classe Gato com herança da classe Ani
     
     }
 
+    descrever(){
+        console.log(this.nome,this.idade, this.cor);
+    }
     miar(){ // criação do método miar
         console.log("miaow");
     }
 }
 
 const cachorro = new Animal("Bianca",14); // adição do objeto cachorro com nome e idade
-const gato = new Animal("Catarina", 11, "preto" ); //adição do objeto gato com nome, idade e cor
+const gato = new Gato("Catarina", 11, "preto" ); //adição do objeto gato com nome, idade e cor
 
 cachorro.descrever(); // puxando o método descrever para o objeto cachorro
+gato.descrever(); // puxando o método descrever para o gato
 gato.miar();// puxando o método miar para o gato
 ```
 
@@ -229,13 +234,13 @@ class SomadorDeNotas{ //criando uma classe
         this.total = 0;
     }
 
-    adicionarNota(nota){//adicioando o método de somar notas
+    adicionarNota(nota){//adicionando o método de somar notas ao total
         this.total += nota;
 
     }
 
     verTotal(){//adicionando método de ver o total
-        console.log(total);
+        console.log(this.total);
     }
 }
 
@@ -270,38 +275,41 @@ Agora, sua tarefa é escrever um código em JavaScript que crie as classes Funci
 Certifique-se de explicar cada parte do código utilizando comentários, explicando para que serve cada atributo e método, bem como a lógica por trás do cálculo de salário para o tipo de funcionário Professor.
 
 ```javascript
-class Funcionario{
-    constructor(nome, idade, salarioBase){
-        this.nome = nome;
-        this.idade = idade;
-        this.salarioBase = salarioBase;
+class Funcionario{ // criando a classe Funcionario
+    constructor(nome, idade, salarioBase){ //criando atributos da nossa classe
+        this.nome = nome; //criação do atributo nome
+        this.idade = idade; // criação do atributo idade
+        this.salarioBase = salarioBase; // criação do atributo salarioBase
     }
 
-    calcularSalario(){
+    calcularSalario(){ //criação do método calcularSalario
 
-        console.log(this.salarioBase + "[valor adicional genérico]");
+        console.log(this.salarioBase, "+ [valor adicional de acordo com o cargo do funcionário]"); // exibição do salarioBase + o salário respectivo ao cargo no console
     }
 }
 
-class Professor extends Funcionario{
-    constructor(nome, idade, salarioBase, diciplina, horasSemanais, valorHora){
-        super(nome,idade,salarioBase);
-        this.diciplina = diciplina
-        this.horasSemanais = horasSemanais;
-        this.valorHora = valorHora;
+class Professor extends Funcionario{ // criação da classe Professor, que herda atributos da classe Funcionario
+    constructor(nome, idade, salarioBase, diciplina, horasSemanais, valorHora){ // estabelecendo os atributos da classe Professor
+        super(nome,idade,salarioBase); //puxando os atributos da classe Funcionario
+        this.diciplina = diciplina //criando atributo diciplina
+        this.horasSemanais = horasSemanais; //criando atributo horasSemanais
+        this.valorHora = valorHora;//criando atributo valorHora
+        
     }
 
-    calcularSalario(){
+    calcularSalario(){ //criando método calcularSalario na classe Professor
 
-        const salarioProfessor = this.horasSemanais * this.valorHora;
-        console.log (salarioProfessor);
+        this.salarioProfessor = this.horasSemanais * this.valorHora; //definindo o cálculo do salarioProfessor
+        console.log (this.salarioProfessor); // exibição do salarioProfessor  no console
     }
 
 
 }
-    const professor1 = new Professor("Mario", 37, 2500, "matemática", 40);
-    const professor2 = new Professor("Brenão", 42, 2500, "história", 40);
+    const professor1 = new Professor("Mario", 37, 2500, "matemática", 40, 20); //criando o objeto professor1 e definindo seus valores
+    const professor2 = new Professor("Brenão", 42, 3000, "história", 40, 30); //criando o objeto professor2 e definindo seus valores
+    const funcionario1 = new Funcionario("Henrique", 33, 2700); //criando o objeto funcionario1 e definindo seus valores
 
-    professor1.calcularSalario();
-    professor2.calcularSalario();
+    professor1.calcularSalario(); //chamando o método calcularSalario para o objeto professor1
+    professor2.calcularSalario(); //chamando o método calcularSalario para o objeto professor2
+    funcionario1.calcularSalario();//chamando o método calcularSalario para o objeto funcionario1
 ```
